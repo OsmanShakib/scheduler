@@ -1,10 +1,7 @@
 import React, { Fragment }from "react";
-
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-
 import "index.scss";
-
 import Button from "components/Button";
 import DayListItem from "components/DayListItem";
 import DayList from "components/DayList";
@@ -18,7 +15,6 @@ import Confirm from "components/Appointment/Confirm";
 import Status from "components/Appointment/Status";
 import Error from "components/Appointment/Error";
 import Form from "components/Appointment/Form";
-
 storiesOf("Button", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
@@ -34,7 +30,6 @@ storiesOf("Button", module)
       Disabled
     </Button>
   ));
-
 storiesOf("DayListItem", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true}]
@@ -45,7 +40,6 @@ storiesOf("DayListItem", module)
   .add("Clickable", () => (
     <DayListItem name="Tuesday" setDay={action("setDay")} spots={5} /> 
   ));
-
   const days = [
     {
     id: 1,
@@ -77,7 +71,7 @@ storiesOf("DayListItem", module)
     .add("Wednesday", () => (
       <DayList days={days} day={"Wednesday"} onChange={action("setDay")} />    
       ));
-  
+
   const interviewer = {
     id: 1,
     name: "Sylvia Palmer",
@@ -140,7 +134,6 @@ storiesOf("DayListItem", module)
       interviewers={interviewers}
       setInterviewer={() => action("setInterviewer")(interviewer.id)}      />
     ));
-
     storiesOf("Appointment", module)
     .addParameters({
       backgrounds: [{ name: "white", value: "#fff", default: true }]
@@ -202,7 +195,5 @@ storiesOf("DayListItem", module)
         <Appointment time="5pm" />
       </Fragment>
     ))
-    
-
     
     
